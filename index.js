@@ -4,9 +4,16 @@ const LetterAPI = require('./src/datasources/letter');
 const PersonAPI = require('./src/datasources/person');
 const resolvers = require('./src/resolvers');
 
+const mocks = {
+  Int: () => 6,
+  Float: () => 22.1,
+  String: () => 'Lorem ipsum dolor sit',
+};
+
 const server = new ApolloServer({ 
     typeDefs,
-    mocks: true,
+    mocks,
+    mockEntireSchema: false, 
     resolvers,
     dataSources: () => ({
     LetterAPI: new LetterAPI(),
