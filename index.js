@@ -6,6 +6,7 @@ const resolvers = require('./src/resolvers');
 
 const server = new ApolloServer({ 
     typeDefs,
+    mocks: true,
     resolvers,
     dataSources: () => ({
     LetterAPI: new LetterAPI(),

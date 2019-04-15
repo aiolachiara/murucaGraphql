@@ -22,8 +22,8 @@ letterReducer(letter) {
     send_place: typeof letter.letter_send_places_str != "undefined" ? letter.letter_send_places_str[0] : "",
     dest_place: typeof letter.letter_dest_places_str != "undefined" ? letter.letter_dest_places_str[0] : "",
     date: letter.letter_date_dt,
-    sender: letter.sender_str,
-    receiver: letter.receiver_str
+    sender:typeof letter.sender_str != "undefined" ? letter.sender_str[0] : "",
+    receiver: typeof letter.receiver_str != "undefined" ? letter.receiver_str[0] : ""
   };
 }
 }
