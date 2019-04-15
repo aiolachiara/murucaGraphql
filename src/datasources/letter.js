@@ -16,15 +16,14 @@ class LetterAPI extends RESTDataSource {
 }
 
 letterReducer(letter) {
-  console.log(letter);
   return {
     id: letter.ID || 0,
     title: letter.post_title,
-    send_place: letter.letter_send_places_str,
-    dest_place: letter.letter_dest_places_str,
+    send_place: typeof letter.letter_send_places_str != "undefined" ? letter.letter_send_places_str[0] : "",
+    dest_place: typeof letter.letter_dest_places_str != "undefined" ? letter.letter_dest_places_str[0] : "",
     date: letter.letter_date_dt,
     sender: letter.sender_str,
-    receiver_str: letter.receiver_str
+    receiver: letter.receiver_str
   };
 }
 }
