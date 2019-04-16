@@ -1,3 +1,4 @@
+const { MockList } = require('graphql-tools');
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./src/schema');
 const LetterAPI = require('./src/datasources/letter');
@@ -9,6 +10,9 @@ const mocks = {
   Float: () => 22.1,
   String: () => 'Lorem ipsum dolor sit',
   ID: () => Math.floor(Math.random() * 10),
+   Query: () => ({
+    letter: () => new MockList(1)
+  }),
 };
 
 const server = new ApolloServer({ 
