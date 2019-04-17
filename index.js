@@ -13,6 +13,9 @@ const mocks = {
    Query: () => ({
     letter: () => new MockList(1)
   }),
+  Letter: () => ({
+    content : "Saepe expedita suscipit proident! Ea perspiciatis in nesciunt ex accusamus sagittis doloremque, quibusdam, aspernatur fringilla nulla eligendi commodi architecto! At habitasse! Nulla, tenetur quos? Est adipisci, magnis, dicta! Ipsam consectetuer porta cubilia imperdiet aenean minus iure aliquip hymenaeos praesent? Proident! Labore temporibus, assumenda veritatis, molestias semper dolores volutpat harum, viverra, nibh eum quaerat soluta quos wisi, eros odit numquam et."
+  })
 };
 
 const server = new ApolloServer({ 

@@ -14,6 +14,7 @@ type Letter {
   date: String
   sender: String
   receiver: String
+  content: String
 }
 type Person {
   name: String
